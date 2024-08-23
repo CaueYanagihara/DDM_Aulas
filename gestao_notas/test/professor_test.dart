@@ -14,7 +14,6 @@ class DAOProfessorFake implements IDAOProfessor {
     return dto;
   }
 
-  
   @override
   DTOProfessor excluir(DTOProfessor dto) {
     return dto;
@@ -22,6 +21,11 @@ class DAOProfessorFake implements IDAOProfessor {
 
   @override
   DTOProfessor alterar(DTOProfessor dto) {
+    return dto;
+  }
+
+  @override
+  DTOProfessor consultar(DTOProfessor dto) {
     return dto;
   }
 }

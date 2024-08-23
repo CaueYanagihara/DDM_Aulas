@@ -35,18 +35,21 @@ class Professor {
   DTOProfessor salvar(DTOProfessor dto) {
     eNomeNaoVazio();
     return dao.salvar(dto);
-    //INSERT INTO PROFESSOR (nome, descricao, cpf, status, ) VALUES ();
+    //INSERT INTO professor (nome, descricao, cpf, status) VALUES (xxxx, xxxx, 000.000.000-00, 'A');
   }
 
   DTOProfessor excluir(dynamic id) {
-    //OU PEGAR SÓ O ID
     return dao.excluir(id);
-    //DELETE FROM PROFESSOR WHERE ID = ID;
+    //DELETE FROM professor WHERE ID = ID;
   }
 
-  DTOProfessor alterar(dynamic id) {
-    //OU PEGAR SÓ O ID
-    return dao.excluir(id);
-    //DELETE FROM PROFESSOR WHERE ID = ID;
+  DTOProfessor alterar(DTOProfessor dto) {
+    return dao.alterar(dto);
+    //UPDATE professor SET nome = dto.nome, descricao = dto.descricao, cpf = dto.cpf, status = dto.status WHERE ID = dto.id;
+  }
+
+  DTOProfessor consultar(DTOProfessor dto) {
+    return dao.consultar(dto);
+    //SELECT * FROM professor WHERE nome = dto.nome;
   }
 }
