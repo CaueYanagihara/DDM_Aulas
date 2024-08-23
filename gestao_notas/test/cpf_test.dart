@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import '../dominio/cpf.dart';
 
@@ -11,7 +10,7 @@ main(List<String> args) {
       expect(() => CPF(''), throwsException);
     });
   });
-  group('CPF deve possuir 11 números', () {
+  group('Entidade CPF deve possuir 11 números', () {
     test('Teste com CPF de 11 números', () {
       expect(() => CPF('070.304.390-07').eOnzeNumeros(), returnsNormally);
     });

@@ -1,19 +1,25 @@
-import 'dart:ffi';
-import 'dart:math';
-
 class CPF {
   late List<int> numerosCPF;
   //LATE GARANTE QUE SERÁ DADO UM VALOR A VARIAVEL ATÉ O FIM DO CÓDIGO,
   //PARA NÃO DAR ERRO DE VARIÁVEL NULA.
 
   CPF(String cpf) {
-    if (cpf == '') throw Exception('CPF não pode ser vazio');
+    eVazio(cpf);
 
     cpf = cpf.replaceAll(RegExp(r'\D'), '');
     //TRANSFORMA TODOS OS CARACTERES QUE NÃO FOREM NUMERO EM ''.
 
     numerosCPF = cpf.split('').map(int.parse).toList();
     //PERCORRE CPF SEPARANDO OS DIGITOS E TRANSFORMANTO EM UMA LISTA DE INT
+    
+    eOnzeNumeros();
+    eNumerosDiferentes();
+    eDigitosCorretos();
+  }
+
+  bool eVazio(cpf) {
+    if (cpf == '') throw Exception('CPF não pode ser vazio');
+    return true;
   }
 
   bool eOnzeNumeros() {
